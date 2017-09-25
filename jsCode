@@ -1,0 +1,21 @@
+function martingale(goal,risk){
+var pocket=0;
+var bet=10;
+var spin=0;
+
+while (pocket<goal || bet<risk){
+
+  spin= Math.floor(Math.random()*100)+1;
+  console.log(spin);
+    if (spin<=47){
+      pocket+=10;
+    }else{
+      bet=bet*2
+    }
+}
+if (pocket >=goal){
+  return "You won " + goal + " !";
+}else {
+  return "You lost" + risk-pocket + ":("
+}
+}
